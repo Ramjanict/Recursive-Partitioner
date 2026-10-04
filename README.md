@@ -17,6 +17,8 @@
   <img src="https://img.shields.io/badge/TailwindCSS-3.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
   <img src="https://img.shields.io/badge/Vite-Fast-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
+<p align="center">
+  <img src="public/screenshots/hero-preview.jpg" alt="Recursive Partitioner Preview" width="100%" style="border-radius: 10px;" />
 </p>
 
 ---
@@ -58,6 +60,10 @@ Every panel can be infinitely subdivided along horizontal or vertical axes, dyna
 - **⚡ Zero-Dependency UI Core**:
   - Built strictly from scratch using native DOM events, CSS Flexbox, and React state management—no bloated split-pane or grid libraries.
 
+<p align="center">
+  <img src="public/screenshots/split-interaction.svg" alt="Recursive Splitting Workflow" width="100%" style="border-radius: 8px;" />
+</p>
+
 ---
 
 ## 🕹️ Controls & Interaction Guide
@@ -69,6 +75,10 @@ Every panel can be infinitely subdivided along horizontal or vertical axes, dyna
 | <kbd>-</kbd> | **Remove Panel** | Deletes the panel and re-flows neighboring partitions to occupy the remaining space. |
 | **Drag Divider** | **Resize Ratio** | Click and hold any divider line to dynamically resize adjacent panels with a real-time HUD tooltip. |
 | **Release Drag** | **Snap Alignment** | Automatically snaps to nearest 25%, 50%, or 75% threshold if close to a fraction. |
+
+<p align="center">
+  <img src="public/screenshots/drag-resize-hud.svg" alt="Drag and Snap HUD Preview" width="100%" style="border-radius: 8px;" />
+</p>
 
 ---
 
@@ -88,6 +98,10 @@ export interface Panel {
 }
 ```
 
+<p align="center">
+  <img src="public/screenshots/architecture-tree.svg" alt="Binary Tree to 2D Layout Mapping" width="100%" style="border-radius: 8px;" />
+</p>
+
 ### Tree Rebalancing Logic on Removal
 
 ```text
@@ -100,6 +114,10 @@ export interface Panel {
 ```
 
 When `Panel B` is removed, rather than leaving an empty or single-child container node, the store automatically unwraps `Parent` and hoists `Panel C` into its position.
+
+<p align="center">
+  <img src="public/screenshots/pruning-workflow.svg" alt="Tree Pruning and Hoisting Workflow" width="100%" style="border-radius: 8px;" />
+</p>
 
 ---
 

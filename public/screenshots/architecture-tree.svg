@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="arch-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#arch-bg)"/>
+
+  <!-- Title -->
+  <text x="600" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" fill="#f8fafc" text-anchor="middle">Binary Tree Data Structure vs. 2D Layout Mapping</text>
+  <text x="600" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Every split branches an internal container node into two leaf/child panels</text>
+
+  <!-- Left Side: State Tree Visualization -->
+  <g transform="translate(60, 120)">
+    <rect width="500" height="490" rx="14" fill="#111827" stroke="#374151" stroke-width="2" filter="url(#card-shadow)"/>
+    <text x="250" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#38bdf8" text-anchor="middle">Hierarchical State Tree</text>
+
+    <!-- Root Node -->
+    <rect x="180" y="70" width="140" height="44" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <text x="250" y="97" font-family="monospace" font-size="14" font-weight="bold" fill="#f8fafc" text-anchor="middle">Root (Vertical)</text>
+
+    <!-- Branch lines from Root -->
+    <line x1="220" y1="114" x2="130" y2="180" stroke="#64748b" stroke-width="2"/>
+    <line x1="280" y1="114" x2="370" y2="180" stroke="#64748b" stroke-width="2"/>
+
+    <!-- Left Child: Panel A -->
+    <rect x="60" y="180" width="140" height="50" rx="8" fill="#3b82f6"/>
+    <text x="130" y="205" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Panel A (Leaf)</text>
+    <text x="130" y="222" font-family="monospace" font-size="11" fill="#e0f2fe" text-anchor="middle">ratio: 0.5 | Blue</text>
+
+    <!-- Right Node: Node B (Horizontal Split) -->
+    <rect x="300" y="180" width="140" height="50" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="370" y="205" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f8fafc" text-anchor="middle">Node B (Horiz.)</text>
+    <text x="370" y="222" font-family="monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">ratio: 0.5 | Internal</text>
+
+    <!-- Branch lines from Node B -->
+    <line x1="340" y1="230" x2="280" y2="310" stroke="#64748b" stroke-width="2"/>
+    <line x1="400" y1="230" x2="450" y2="310" stroke="#64748b" stroke-width="2"/>
+
+    <!-- Sub Child B1 -->
+    <rect x="210" y="310" width="130" height="50" rx="8" fill="#ec4899"/>
+    <text x="275" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Panel B1 (Leaf)</text>
+    <text x="275" y="352" font-family="monospace" font-size="11" fill="#fdf2f8" text-anchor="middle">Top | Pink</text>
+
+    <!-- Sub Child B2 -->
+    <rect x="380" y="310" width="130" height="50" rx="8" fill="#10b981"/>
+    <text x="445" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Panel B2 (Leaf)</text>
+    <text x="445" y="352" font-family="monospace" font-size="11" fill="#ecfdf5" text-anchor="middle">Bottom | Green</text>
+
+    <!-- Schema Snippet -->
+    <rect x="30" y="400" width="440" height="70" rx="6" fill="#030712" stroke="#1f2937" stroke-width="1"/>
+    <text x="50" y="425" font-family="monospace" font-size="12" fill="#a7f3d0">interface Panel {</text>
+    <text x="65" y="445" font-family="monospace" font-size="11" fill="#94a3b8">  id, color, children?: Panel[], orientation, ratio</text>
+    <text x="50" y="460" font-family="monospace" font-size="12" fill="#a7f3d0">}</text>
+  </g>
+
+  <!-- Connection Bridge -->
+  <g transform="translate(565, 330)">
+    <text x="35" y="-10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="middle">Renders As</text>
+    <path d="M 10 15 L 60 15" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="58,9 70,15 58,21" fill="#38bdf8"/>
+  </g>
+
+  <!-- Right Side: 2D Rendered Viewport -->
+  <g transform="translate(640, 120)">
+    <rect width="500" height="490" rx="14" fill="#111827" stroke="#374151" stroke-width="2" filter="url(#card-shadow)"/>
+    <text x="250" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#38bdf8" text-anchor="middle">Browser 2D Viewport Result</text>
+
+    <g transform="translate(30, 65)">
+      <!-- Left Panel A (50% width) -->
+      <rect x="0" y="0" width="215" height="390" rx="10" fill="#3b82f6"/>
+      <text x="107" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Panel A</text>
+      <text x="107" y="218" font-family="monospace" font-size="12" fill="#bfdbfe" text-anchor="middle">(50% width)</text>
+
+      <!-- Center Vertical Divider -->
+      <rect x="216" y="0" width="8" height="390" fill="#000000"/>
+
+      <!-- Right Section (50% width) containing horizontal split -->
+      <g transform="translate(225, 0)">
+        <!-- Top Panel B1 -->
+        <rect x="0" y="0" width="215" height="191" rx="10" fill="#ec4899"/>
+        <text x="107" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Panel B1</text>
+        <text x="107" y="118" font-family="monospace" font-size="12" fill="#fbcfe8" text-anchor="middle">(50% height)</text>
+
+        <!-- Horizontal Divider -->
+        <rect x="0" y="192" width="215" height="6" fill="#000000"/>
+
+        <!-- Bottom Panel B2 -->
+        <rect x="0" y="199" width="215" height="191" rx="10" fill="#10b981"/>
+        <text x="107" y="295" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Panel B2</text>
+        <text x="107" y="318" font-family="monospace" font-size="12" fill="#a7f3d0" text-anchor="middle">(50% height)</text>
+      </g>
+    </g>
+  </g>
+</svg>

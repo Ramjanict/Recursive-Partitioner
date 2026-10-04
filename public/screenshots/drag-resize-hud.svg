@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hud-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="hud-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#hud-bg)"/>
+
+  <!-- Title -->
+  <text x="600" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" fill="#f8fafc" text-anchor="middle">Interactive Drag &amp; Magnetic Snapping Engine</text>
+  <text x="600" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Fluid drag recalculation, safe clamping (10% - 90%), and snap-to-fraction alignment</text>
+
+  <!-- Main Viewport Simulation -->
+  <g transform="translate(100, 120)">
+    <rect width="1000" height="420" rx="14" fill="#0f172a" stroke="#334155" stroke-width="2" filter="url(#hud-shadow)"/>
+
+    <!-- Left Panel (50% ratio) -->
+    <rect x="15" y="15" width="480" height="390" rx="10" fill="#8b5cf6"/>
+    <text x="255" y="210" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#ffffff" text-anchor="middle" opacity="0.9">Left Partition (50%)</text>
+
+    <!-- Right Panel (50% ratio) -->
+    <rect x="505" y="15" width="480" height="390" rx="10" fill="#06b6d4"/>
+    <text x="745" y="210" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#ffffff" text-anchor="middle" opacity="0.9">Right Partition (50%)</text>
+
+    <!-- Snap Guides (dotted lines) -->
+    <!-- 25% snap point -->
+    <line x1="255" y1="15" x2="255" y2="405" stroke="#ffffff" stroke-width="2" stroke-dasharray="6,6" opacity="0.4"/>
+    <rect x="220" y="25" width="70" height="24" rx="4" fill="#1e293b" opacity="0.85"/>
+    <text x="255" y="41" font-family="monospace" font-size="12" fill="#38bdf8" text-anchor="middle">1/4th (25%)</text>
+
+    <!-- 75% snap point -->
+    <line x1="745" y1="15" x2="745" y2="405" stroke="#ffffff" stroke-width="2" stroke-dasharray="6,6" opacity="0.4"/>
+    <rect x="710" y="25" width="70" height="24" rx="4" fill="#1e293b" opacity="0.85"/>
+    <text x="745" y="41" font-family="monospace" font-size="12" fill="#38bdf8" text-anchor="middle">3/4th (75%)</text>
+
+    <!-- Active Center Divider -->
+    <rect x="496" y="15" width="8" height="390" fill="#000000"/>
+    <rect x="494" y="15" width="12" height="390" fill="#38bdf8" opacity="0.25"/>
+
+    <!-- Drag HUD Badge (floating) -->
+    <g transform="translate(500, 170)">
+      <rect x="-65" y="-36" width="130" height="36" rx="8" fill="#000000" stroke="#38bdf8" stroke-width="2" filter="url(#hud-shadow)"/>
+      <polygon points="-6,0 6,0 0,6" fill="#000000"/>
+      <text x="0" y="-13" font-family="monospace" font-size="15" font-weight="bold" fill="#38bdf8" text-anchor="middle">1/2th (50.0%)</text>
+
+      <!-- Drag arrows cursor icon -->
+      <circle cx="0" cy="30" r="18" fill="#0f172a" stroke="#ffffff" stroke-width="2"/>
+      <path d="M -10 30 L 10 30 M -6 26 L -10 30 L -6 34 M 6 26 L 10 30 L 6 34" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Bottom Legend / Callout -->
+  <g transform="translate(200, 565)">
+    <circle cx="20" cy="20" r="8" fill="#38bdf8"/>
+    <text x="40" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#cbd5e1">Live Hover HUD indicator</text>
+
+    <line x1="280" y1="20" x2="310" y2="20" stroke="#ffffff" stroke-width="2" stroke-dasharray="4,4"/>
+    <text x="325" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#cbd5e1">Magnetic Snap Targets (25%, 50%, 75%)</text>
+
+    <circle cx="680" cy="20" r="8" fill="#8b5cf6"/>
+    <text x="700" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#cbd5e1">Safe Clamping Bounds: min 10% | max 90%</text>
+  </g>
+</svg>
